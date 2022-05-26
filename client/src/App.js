@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import SimpleStorageContract from './contracts/SimpleStorage.json'
-import getWeb3 from './getWeb3'
-
 import './App.css'
 import Header from './components/Header'
+import Enroll from './pages/Enroll'
+import CreateClass from './pages/CreateClass'
+import Home from './pages/Home'
+
+import SimpleStorageContract from './contracts/SimpleStorage.json'
+import getWeb3 from './getWeb3'
 
 class App extends Component {
   state = { storageValue: 0, web3: null, accounts: null, contract: null }
@@ -64,6 +67,12 @@ class App extends Component {
         <Router>
           <div className='container'>
             <Header />
+            <Routes>
+              <Route path='/' element={<Home />}></Route>
+
+              <Route path='/create-class' element={<CreateClass />}></Route>
+              <Route path='/enroll' element={<Enroll />}></Route>
+            </Routes>
             <h1>Good to Go!</h1>
             <p>Your Truffle Box is installed and ready.</p>
             <h2>Smart Contract Example</h2>

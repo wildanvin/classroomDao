@@ -11,12 +11,12 @@ function Header() {
       </div>
       <ul>
         <li>
-          <Link to='/login'>
+          <Link to='/create-class'>
             <FaChalkboardTeacher /> Create Classroom
           </Link>
         </li>
         <li>
-          <Link to='/register'>
+          <Link to='/enroll'>
             <FaLaugh /> Enroll
           </Link>
         </li>
