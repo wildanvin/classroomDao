@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Enroll from './pages/Enroll'
 import CreateClass from './pages/CreateClass'
 import Home from './pages/Home'
+import Connect from './pages/Connect'
 
 import SimpleStorageContract from './contracts/SimpleStorage.json'
 import getWeb3 from './getWeb3'
@@ -15,6 +16,7 @@ class App extends Component {
 
   componentDidMount = async () => {
     try {
+      console.log('mounting APP')
       // Get network provider and web3 instance.
       const web3 = await getWeb3()
 
@@ -60,7 +62,7 @@ class App extends Component {
 
   render() {
     if (!this.state.web3) {
-      return <div>Loading Web3, accounts, and contract...</div>
+      return <Connect />
     }
     return (
       <>
@@ -70,7 +72,10 @@ class App extends Component {
             <Routes>
               <Route path='/' element={<Home />}></Route>
 
-              <Route path='/create-class' element={<CreateClass />}></Route>
+              <Route
+                path='/create-class'
+                element={<CreateClass address={this.state.accounts[0]} />}
+              ></Route>
               <Route path='/enroll' element={<Enroll />}></Route>
             </Routes>
             <h1>Good to Go!</h1>

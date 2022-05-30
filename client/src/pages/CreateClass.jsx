@@ -1,7 +1,39 @@
 import React from 'react'
-import BackButton from '../components/BackButton'
+import { useState, useEffect } from 'react'
 
-function CreateClass() {
+import BackButton from '../components/BackButton'
+import Web3 from 'web3'
+
+function CreateClass(props) {
+  const provider = new Web3.providers.HttpProvider('http://127.0.0.1:8545')
+  const web3 = new Web3(provider)
+
+  const [formData, setFormData] = useState({
+    classroomName: '',
+    email: '',
+    tAddress: props.address,
+    sessions: 1,
+    startDate: '',
+    description: '',
+    tools: '',
+  })
+
+  // useEffect(() => {
+  //   const fgetWeb3 = async () => {
+  //     const web3 = await getWeb3()
+  //     console.log(web3)
+  //     console.log('er')
+  //   }
+  //   fgetWeb3()
+  //   console.log(web3)
+  // }, [])
+
+  const onClick = (e) => {
+    e.preventDefault()
+    console.log('helo')
+    console.log(props.address)
+  }
+
   const onSubmit = () => {
     return 'Hello'
   }
@@ -30,27 +62,22 @@ function CreateClass() {
 
           <div className='form-group'>
             <label htmlFor='email'>Your Email</label>
-            <input type='email' className='form-control' />
-          </div>
-
-          <div className='form-group'>
-            <label htmlFor='teacher-addr'>Teacher address: </label>
             <input
-              type='text'
+              type='email'
               className='form-control'
-              value='0x1dcd9b43C01fC91a93b6417ef22ca8112f46dc0f'
-              disabled
+              placeholder='wildanvin@example.com'
             />
           </div>
 
           <div className='form-group'>
-            <label htmlFor='number-of-students'>Number of students: </label>
+            <label htmlFor='teacher-addr'>
+              Teacher address (your address):{' '}
+            </label>
             <input
-              type='number'
-              min='10'
-              max='40'
+              type='text'
               className='form-control'
-              placeholder='min: 10, max:40'
+              value={formData.tAddress}
+              disabled
             />
           </div>
 
@@ -70,7 +97,7 @@ function CreateClass() {
               name='description'
               id='description'
               className='form-control'
-              placeholder='The "what" and "how students will learn"'
+              placeholder='The "what" and "how" students will learn'
               onChange={(e) => setDescription(e.target.value)}
             ></textarea>
           </div>
@@ -81,11 +108,13 @@ function CreateClass() {
               name='tools'
               id='tools'
               className='form-control'
-              placeholder='Discord, Trello, freeCodeCamp, Duolingo, Zoom, Coordinape... There is a lot of resources :)'
+              placeholder="Discord, Trello, freeCodeCamp, Duolingo, Zoom, Coordinape, Patrick's 30+ hours video of blockchain development... There is a lot of resources to learn together :)"
             ></textarea>
           </div>
           <div className='form-group'>
-            <button className='btn btn-block'>Submit</button>
+            <button onClick={onClick} className='btn btn-block'>
+              Create Classroom
+            </button>
           </div>
         </form>
       </section>
