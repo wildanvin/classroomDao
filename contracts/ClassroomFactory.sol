@@ -8,6 +8,8 @@ import "./Classroom.sol";
 /// @notice This is the contract that will create and store all the classrooms
 
 contract ClassroomFactory{
+
+    event ClassroomCreated(address indexed classroomAddress);
     
     ///@notice In this array the classrooms will be stored
     Classroom[] public classrooms;
@@ -15,6 +17,8 @@ contract ClassroomFactory{
     function createClassroom(uint _sessions) public {
         Classroom classroom = (new Classroom)(payable(msg.sender), _sessions);
         classrooms.push(classroom);
+
+        emit ClassroomCreated(address(classrooms[classrooms.length - 1]));
     }
     
     /// @notice This function will retrieve the info of each classroom

@@ -12,11 +12,16 @@ import SimpleStorageContract from './contracts/SimpleStorage.json'
 import getWeb3 from './getWeb3'
 
 class App extends Component {
-  state = { storageValue: 0, web3: null, accounts: null, contract: null }
+  state = {
+    storageValue: 0,
+    web3: null,
+    accounts: null,
+    contract: null,
+    networkId: null,
+  }
 
   componentDidMount = async () => {
     try {
-      console.log('mounting APP')
       // Get network provider and web3 instance.
       const web3 = await getWeb3()
 
@@ -25,17 +30,20 @@ class App extends Component {
 
       // Get the contract instance.
       const networkId = await web3.eth.net.getId()
+      console.log(`network id is ${networkId}. this is from app`)
       const deployedNetwork = SimpleStorageContract.networks[networkId]
       const instance = new web3.eth.Contract(
         SimpleStorageContract.abi,
         deployedNetwork && deployedNetwork.address
       )
 
+      console.log(instance)
+
       //console.log(networkId)
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
       this.setState(
-        { web3, accounts, contract: instance } /*, this.runExample*/
+        { web3, accounts, contract: instance, networkId } /*, this.runExample*/
       )
     } catch (error) {
       // Catch any errors for any of the above operations.
@@ -74,7 +82,12 @@ class App extends Component {
 
               <Route
                 path='/create-class'
-                element={<CreateClass address={this.state.accounts[0]} />}
+                element={
+                  <CreateClass
+                    accounts={this.state.accounts}
+                    networkId={this.state.networkId}
+                  />
+                }
               ></Route>
               <Route path='/enroll' element={<Enroll />}></Route>
             </Routes>
