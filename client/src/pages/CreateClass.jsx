@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import BackButton from '../components/BackButton'
 
@@ -30,6 +31,8 @@ function CreateClass(props) {
   const { classroomName, email, sessions, startDate, description, tools } =
     formData
 
+  const navigate = useNavigate()
+
   const onClick = async (e) => {
     e.preventDefault()
     let createClassroomTx = await classroomFactory.methods
@@ -51,6 +54,8 @@ function CreateClass(props) {
       },
       body: JSON.stringify({ id: idAddress, formData }),
     })
+
+    navigate(`/classroom/${idAddress}`)
   }
 
   const onMutate = (e) => {

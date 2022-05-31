@@ -7,6 +7,7 @@ import Enroll from './pages/Enroll'
 import CreateClass from './pages/CreateClass'
 import Home from './pages/Home'
 import Connect from './pages/Connect'
+import Classroom from './pages/Classroom'
 
 import SimpleStorageContract from './contracts/SimpleStorage.json'
 import getWeb3 from './getWeb3'
@@ -30,14 +31,12 @@ class App extends Component {
 
       // Get the contract instance.
       const networkId = await web3.eth.net.getId()
-      console.log(`network id is ${networkId}. this is from app`)
+      //console.log(`network id is ${networkId}. this is from app`)
       const deployedNetwork = SimpleStorageContract.networks[networkId]
       const instance = new web3.eth.Contract(
         SimpleStorageContract.abi,
         deployedNetwork && deployedNetwork.address
       )
-
-      console.log(instance)
 
       //console.log(networkId)
       // Set web3, accounts, and contract to the state, and then proceed with an
@@ -90,8 +89,9 @@ class App extends Component {
                 }
               ></Route>
               <Route path='/enroll' element={<Enroll />}></Route>
+              <Route path='/classroom/:address' element={<Classroom />} />
             </Routes>
-            <h1>Good to Go!</h1>
+            {/* <h1>Good to Go!</h1>
             <p>Your Truffle Box is installed and ready.</p>
             <h2>Smart Contract Example</h2>
             <p>
@@ -102,7 +102,7 @@ class App extends Component {
               Try changing the value stored on <strong>line 42</strong> of
               App.js.
             </p>
-            <div>The stored value is: {this.state.storageValue}</div>
+            <div>The stored value is: {this.state.storageValue}</div> */}
           </div>
         </Router>
       </>
