@@ -39,8 +39,6 @@ function CreateClass(props) {
       .createClassroom(formData.sessions)
       .send({ from: props.accounts[0] })
       .on('receipt', async function (receipt) {
-        //onsole.log(receipt)
-
         alert(`Classroom created successfully`)
       })
 
@@ -101,7 +99,7 @@ function CreateClass(props) {
               value={email}
               onChange={onMutate}
               className='form-control'
-              placeholder='wildanvin@example.com'
+              placeholder='wilman@example.com'
             />
           </div>
 

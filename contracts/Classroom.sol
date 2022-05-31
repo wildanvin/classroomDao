@@ -21,6 +21,7 @@ contract Classroom {
     uint public numOfParticipants = 3;
     uint public numConfirmationsRequired = 2;
     uint public sessions;
+    uint public reward;
     address public classroomAddress = address(this);
 
     mapping(address => bool) public isOwner;
@@ -110,12 +111,18 @@ contract Classroom {
         );
 
         require(owners.length>0,"There are no participants in the classroom");
-        uint reward = address(this).balance/owners.length*sessions;
-
+        reward = address(this).balance/(owners.length*sessions);
+        
         for (uint i = 0; i < owners.length; i++) {
             (bool sent, ) = owners[i].call{value: reward}("");
             require(sent, "Failed to send Ether");
         }
+        
+        
+        /*
+        (bool sent, ) = owners[0].call{value: reward}("");
+        require(sent, "Failed to send Ether");
+        */
 
         transaction.executed = true;
         

@@ -1,47 +1,14 @@
 {
   "classrooms": [
     {
-      "id": "0x43F773AB7aCc3DaA0E0A71B58f4AB8c9afF0279D",
+      "id": "0x76aE37BC8FD15CcB381ae82436bE2074c2931d12",
       "formData": {
-        "classroomName": "English Summer 2022",
+        "classroomName": "English class Summer 2022",
         "email": "wilman@example.com",
-        "sessions": "8",
-        "startDate": "2022-06-15",
-        "description": "Learn english with 20 other students by completing the duolingo course and speaking to tourists locally",
-        "tools": "Discord, youtube, duolingo, coordinape."
-      }
-    },
-    {
-      "id": "0x0bFB516168c187650690d018dee6157f6F02Ae8E",
-      "formData": {
-        "classroomName": "Intro to blockchain",
-        "email": "wilman@example.com",
-        "sessions": "3",
-        "startDate": "2022-06-20",
-        "description": "Learn the basics of blockchain. Just concepts no code required",
-        "tools": "Patrick Collins 32 hours video, freeCodeCamp, Kernel bootcamp. coordinape, discord"
-      }
-    },
-    {
-      "id": "0xC4319d7AC2Ebf92Cfb4b054894b90b1cd787B64a",
-      "formData": {
-        "classroomName": "Intro to economics",
-        "email": "wilman@example.com",
-        "sessions": "4",
-        "startDate": "2022-06-20",
-        "description": "Intro to economics with a focus on blackchain",
-        "tools": "Jesus Huerta de Soto materials"
-      }
-    },
-    {
-      "id": "0x8806C9cb1cF5237272711C6a540F3888D7DC83d5",
-      "formData": {
-        "classroomName": "English  Summer 2022 ",
-        "email": "wildanvin@example.com",
-        "sessions": "4",
-        "startDate": "2022-07-20",
-        "description": "Let's learn English using Duolingo and speaking with tourists in Quito",
-        "tools": "Discord, Yooutube, Zoom, coordinape"
+        "sessions": "2",
+        "startDate": "2022-07-12",
+        "description": "Let's learn English using Duolingo and speaking with tourists in Quito, Ecuador",
+        "tools": "Duolingo, Discord, Youtube, coordinape"
       }
     }
   ]

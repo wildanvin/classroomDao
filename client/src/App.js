@@ -89,7 +89,10 @@ class App extends Component {
                 }
               ></Route>
               <Route path='/enroll' element={<Enroll />}></Route>
-              <Route path='/classroom/:address' element={<Classroom />} />
+              <Route
+                path='/classroom/:address'
+                element={<Classroom accounts={this.state.accounts} />}
+              />
             </Routes>
             {/* <h1>Good to Go!</h1>
             <p>Your Truffle Box is installed and ready.</p>
