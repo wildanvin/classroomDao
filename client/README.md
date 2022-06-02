@@ -49,11 +49,12 @@ Video demo [part1](https://www.loom.com/share/4237986466b544c586444626be88ebbb) 
 
 ## Directory Structure
 
-- `docs`: contains the HTML, CSS and Javascript files needed for the frontend. The front end is vanillaJS.
-- `contracts`: Smart contracts that are deployed in the Kovan testnet.
+This project was bootstrapped with a react truffle box, so the project directory is kind of standard
+
+- `client`: Contains a react app.
+- `contracts`: Smart contracts.
 - `migrations`: Migration files for deploying contracts in `contracts` directory.
-- `test`: Tests for smart contracts.
-- `utils`: Javascript code used for advance time in ganache.
+- `test`: Tests for smart contracts. Right now no test is implemented
 
 ## Environment variables (not needed for running project locally)
 
