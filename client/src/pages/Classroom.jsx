@@ -2,6 +2,8 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
+import BackButton from '../components/BackButton'
+
 import ClassroomContract from '../contracts/Classroom.json'
 import Web3 from 'web3'
 
@@ -148,6 +150,7 @@ function Classroom(props) {
   }
   return (
     <div>
+      <BackButton url='/enroll' />
       <section className='heading'>
         <h1>{classroomName}</h1>
         <p>Teached by: {email}</p>
