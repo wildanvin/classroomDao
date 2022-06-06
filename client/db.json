@@ -1,36 +1,36 @@
 {
   "classrooms": [
     {
-      "id": "0x76aE37BC8FD15CcB381ae82436bE2074c2931d12",
+      "id": "0xE11414dD5A408CB61D9d50a148dc2a1110b4246D",
       "formData": {
         "classroomName": "English class Summer 2022",
         "email": "wilman@example.com",
         "sessions": "2",
-        "startDate": "2022-07-12",
-        "description": "Let's learn English using Duolingo and speaking with tourists in Quito, Ecuador",
-        "tools": "Duolingo, Discord, Youtube, coordinape"
+        "startDate": "2022-06-15",
+        "description": "Duolingo",
+        "tools": "Duolingo"
       }
     },
     {
-      "id": "0x0034d39455a4595B32d42C255CCE80890EEC0c8E",
+      "id": "0xba2710008588A592be7E47A9E72777402E098532",
       "formData": {
-        "classroomName": "Introduccion a la economía",
-        "email": "wilman@example.com",
-        "sessions": 1,
-        "startDate": "2022-06-16",
-        "description": "Learn economy and how money works",
-        "tools": "Discord, youtube"
-      }
-    },
-    {
-      "id": "0x693f9cDbc56b673C9C75Bc4961EBF7Df4cb791e5",
-      "formData": {
-        "classroomName": "How to DeFi",
-        "email": "prueba@prueba.com",
+        "classroomName": "Introduction to Bitcoin, Crypto and Blockchain",
+        "email": "wilman@wilman.com",
         "sessions": "2",
-        "startDate": "2022-09-13",
-        "description": "Understand what a pool is, what is LP, impermanent loss, and the blue chips players in the industry, how to DYOR, play it safe, not ape into something and cry later",
-        "tools": "Discord, youtube, intro to defi from coin gecko"
+        "startDate": "2022-06-14",
+        "description": "Let's discuss Bitcoin and cryptocurrency from the bad (ponzi schemes, fraud, theft) and the good (coordination, soveraignity, quadratic funding)",
+        "tools": "Discord, Youtube, "
+      }
+    },
+    {
+      "id": "0x0740FD37812da964d0582f13496598bac79B83b4",
+      "formData": {
+        "classroomName": "Economy 101",
+        "email": "daniel@example.com",
+        "sessions": "8",
+        "startDate": "2022-06-30",
+        "description": "Let's lear economic basics, supply and demand, some keynesian and autrian theory, some game theory, etc",
+        "tools": "DIscord, Youtube, Jesús Huerta de Soto"
       }
     }
   ]

@@ -20,7 +20,7 @@ function ClassroomList() {
     return <h2>No classrooms yet</h2>
   }
 
-  console.log(typeof classrooms)
+  //console.log(typeof classrooms)
 
   return (
     <>

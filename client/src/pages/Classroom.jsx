@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 import BackButton from '../components/BackButton'
+import TransactionHandler from '../components/TransactionHandler'
 
 import ClassroomContract from '../contracts/Classroom.json'
 import Web3 from 'web3'
@@ -52,7 +53,6 @@ function Classroom(props) {
     )
 
     classroomContract.setProvider(window.ethereum)
-
     async function checkBalance() {
       try {
         web3.eth.getBalance(params.address).then((balanceInWei) => {
@@ -106,50 +106,27 @@ function Classroom(props) {
       .on('receipt', async function (receipt) {
         alert(`Transaction submitted. Waiting for aproval and execution`)
       })
+
+    async function getTransactionCount() {
+      try {
+        let txCount = await classroomContract.methods
+          .getTransactionCount()
+          .call()
+        //console.log(`Number of transactions: ${txCount}`)
+        setTransactionData((prevState) => ({
+          ...prevState,
+          txCount: txCount,
+        }))
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    getTransactionCount()
   }
 
-  const onConfirm = async (e) => {
-    e.preventDefault()
-
-    classroomContract.setProvider(window.ethereum)
-
-    await classroomContract.methods
-      .confirmTransaction(transactionData.txToConfirm)
-      .send({ from: props.accounts[0] })
-      .on('receipt', async function (receipt) {
-        alert(`Transaction ${transactionData.txToConfirm} approved.`)
-      })
-  }
-
-  const onRevoke = async (e) => {
-    e.preventDefault()
-
-    classroomContract.setProvider(window.ethereum)
-
-    await classroomContract.methods
-      .revokeConfirmation(transactionData.txToRevoke)
-      .send({ from: props.accounts[0] })
-      .on('receipt', async function (receipt) {
-        alert(`Transaction ${transactionData.txToRevoke} revoked.`)
-      })
-  }
-
-  const onExecute = async (e) => {
-    e.preventDefault()
-
-    classroomContract.setProvider(window.ethereum)
-
-    await classroomContract.methods
-      .executeTransaction(transactionData.txToExecute)
-      .send({ from: props.accounts[0] })
-      .on('receipt', async function (receipt) {
-        alert(
-          `Transaction ${transactionData.txToExecute} executed. Funds have been distributed.`
-        )
-      })
-  }
   return (
-    <div>
+    <>
       <BackButton url='/enroll' />
       <section className='heading'>
         <h1>{classroomName}</h1>
@@ -186,67 +163,30 @@ function Classroom(props) {
           </button>
         </div>
 
+        <hr />
+        <br />
+
         <div className='form-group'>
           <button onClick={onTransaction} className='btn btn-block'>
             Submit Transaction
           </button>
         </div>
 
-        <div className='form-group'>
-          <label htmlFor='onConfirm'>
-            Transaction number to <b>confirm</b>:{' '}
-          </label>
-          <input
-            id='txToConfirm'
-            value={transactionData.txToConfirm}
-            onChange={onMutate}
-            type='number'
-            min='0'
-            max={toString(parseInt(sessions) - 1)}
-            className='form-control'
-          />
-          <button onClick={onConfirm} className='btn btn-block'>
-            Confirm Transaction
-          </button>
-        </div>
+        <hr />
+        <br />
 
-        <div className='form-group'>
-          <label htmlFor='onRevoke'>
-            Transaction number to <b>revoke</b>:{' '}
-          </label>
-          <input
-            id='txToRevoke'
-            value={transactionData.txToRevoke}
-            onChange={onMutate}
-            type='number'
-            min='0'
-            max={toString(parseInt(sessions) - 1)}
-            className='form-control'
-          />
-          <button onClick={onRevoke} className='btn btn-block'>
-            Revoke Transaction
-          </button>
-        </div>
+        {/* <TransactionHandler
+          address={params.address}
+          accounts={props.accounts}
+          txCount={0}
+        /> */}
 
-        <div className='form-group'>
-          <label htmlFor='onExecute'>
-            Transaction number to <b>execute</b>:{' '}
-          </label>
-          <input
-            id='txToExecute'
-            value={transactionData.txToExecute}
-            onChange={onMutate}
-            type='number'
-            min='0'
-            max={toString(parseInt(sessions) - 1)}
-            className='form-control'
-          />
-          <button onClick={onExecute} className='btn btn-block'>
-            Execute Transaction
-          </button>
-        </div>
+        <TransactionHandler
+          address={params.address}
+          accounts={props.accounts}
+        />
       </section>
-    </div>
+    </>
   )
 }
 

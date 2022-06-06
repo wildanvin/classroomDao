@@ -65,10 +65,6 @@ function CreateClass(props) {
     }))
   }
 
-  const onSubmit = () => {
-    return 'Hello'
-  }
-
   return (
     <>
       <BackButton url='/' />
@@ -78,7 +74,7 @@ function CreateClass(props) {
       </section>
 
       <section className='form'>
-        <form onSubmit={onSubmit}>
+        <form>
           <div className='form-group'>
             <label htmlFor='name'>Classroom Name</label>
             <input
@@ -166,6 +162,9 @@ function CreateClass(props) {
             <button onClick={onClick} className='btn btn-block'>
               Create Classroom
             </button>
+            <br />
+            <br />
+            <br />
           </div>
         </form>
       </section>
