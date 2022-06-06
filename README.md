@@ -20,11 +20,11 @@ It would be awesome to use Coordinape to build the transaction and distribute th
 
 ## Deployed version URL
 
-You can interact with de dApp in this [link](https://classroom-dao.vercel.app/). Please take into account that for demonstration purposes each classroom has a max of 3 participants and needs the approval of 2 to execute transactions
+You can interact with de dApp in this [link](https://classroom-dao.vercel.app/). Please take into account that in this demo each classroom has a max of 3 participants and needs the approval of 2 to execute transactions. Of course you can change that in the contract `Classroom.sol` at lines 21 & 22 and redeploy
 
 ## Deployed Address
 
-The ClassroomFactory.sol contarct is deployed in the Kovan network at 0x9F99a1B4ae3484460b9a812B46A321d749DE59d8
+The `ClassroomFactory.sol` contarct is deployed in the Kovan network at `0x9F99a1B4ae3484460b9a812B46A321d749DE59d8`.
 
 ## Screencast Link
 
