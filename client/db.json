@@ -1,36 +1,14 @@
 {
   "classrooms": [
     {
-      "id": "0xE11414dD5A408CB61D9d50a148dc2a1110b4246D",
+      "id": "0xfA558D2a0F4B90abd6152028C85E65C2772A807A",
       "formData": {
         "classroomName": "English class Summer 2022",
         "email": "wilman@example.com",
-        "sessions": "2",
-        "startDate": "2022-06-15",
-        "description": "Duolingo",
-        "tools": "Duolingo"
-      }
-    },
-    {
-      "id": "0xba2710008588A592be7E47A9E72777402E098532",
-      "formData": {
-        "classroomName": "Introduction to Bitcoin, Crypto and Blockchain",
-        "email": "wilman@wilman.com",
-        "sessions": "2",
-        "startDate": "2022-06-14",
-        "description": "Let's discuss Bitcoin and cryptocurrency from the bad (ponzi schemes, fraud, theft) and the good (coordination, soveraignity, quadratic funding)",
-        "tools": "Discord, Youtube, "
-      }
-    },
-    {
-      "id": "0x0740FD37812da964d0582f13496598bac79B83b4",
-      "formData": {
-        "classroomName": "Economy 101",
-        "email": "daniel@example.com",
-        "sessions": "8",
-        "startDate": "2022-06-30",
-        "description": "Let's lear economic basics, supply and demand, some keynesian and autrian theory, some game theory, etc",
-        "tools": "DIscord, Youtube, Jesús Huerta de Soto"
+        "sessions": 1,
+        "startDate": "2022-07-20",
+        "description": "Let's learn English by completing the Duolingo course and chatting with tourists in Quito",
+        "tools": "Duolingo, Zoom, Discord"
       }
     }
   ]

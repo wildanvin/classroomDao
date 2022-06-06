@@ -5569,6 +5569,12 @@
     "version": "0.8.10+commit.fc410830.Emscripten.clang"
   },
   "networks": {
+    "42": {
+      "events": {},
+      "links": {},
+      "address": "0x9F99a1B4ae3484460b9a812B46A321d749DE59d8",
+      "transactionHash": "0xc056c3049d48769bfa5e164b1aeb0f533468cc4cf99b4c257f811b7b3e50818c"
+    },
     "5777": {
       "events": {},
       "links": {},
@@ -5583,7 +5589,7 @@
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-06-03T04:30:25.350Z",
+  "updatedAt": "2022-06-06T03:43:41.574Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Wilman D. Vinueza",

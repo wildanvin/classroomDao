@@ -22,6 +22,10 @@ It would be awesome to use Coordinape to build the transaction and distribute th
 
 I am working on it 😬
 
+## Deployed Address
+
+The ClassroomFactory.sol contarct is deployed in the Kovan network at 0x9F99a1B4ae3484460b9a812B46A321d749DE59d8
+
 ## Screencast Link
 
 This is a demo locally in ganache, some UI is still incomplete. I will make a new video soon.
