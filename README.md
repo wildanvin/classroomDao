@@ -24,13 +24,11 @@ You can interact with de dApp in this [link](https://classroom-dao.vercel.app/).
 
 ## Deployed Address
 
-The `ClassroomFactory.sol` contarct is deployed in the Kovan network at `0x9F99a1B4ae3484460b9a812B46A321d749DE59d8`.
+The `ClassroomFactory.sol` contract is deployed in the Kovan network at `0x9F99a1B4ae3484460b9a812B46A321d749DE59d8`.
 
 ## Screencast Link
 
-This is a demo locally in ganache, some UI is still incomplete. I will make a new video soon.
-
-Video demo [part1](https://www.loom.com/share/4237986466b544c586444626be88ebbb) and [part2](https://www.loom.com/share/3aeabd92be5d41d383b6da447f12c314)
+I will upload a video demo soon
 
 ## How to run the project locally
 
@@ -48,7 +46,7 @@ Video demo [part1](https://www.loom.com/share/4237986466b544c586444626be88ebbb) 
 3. Now, let's go back to the terminal where you cloned the project and run: `truffle migrate --network development`
 4. Notice that the FE code is in the `client` folder. So, open a new terminal and run `cd client`. Now that we are in the client folder run `npm install`.
 5. Now run `npm run dev` to spin up the react front end and the mock database.
-6. You now should be able to interact with the contracts through the front-end in your beowser at localhost:3000
+6. You now should be able to interact with the contracts through the front-end in your browser at localhost:3000
 7. Now that you are on the front end don't forget to change the network in Metamask to Localhost:8545 and add an account using the mock private keys that ganache provides.
 
 ## Directory Structure
@@ -62,12 +60,14 @@ This project was bootstrapped with a react truffle box, so the project directory
 
 ## Environment variables (not needed for running project locally)
 
-If you want to deploy the contracts to the Kovan testnet, create a `.env` file in the same directory as the `truffle-config.js` and run in terminal `truffle migrate --network kovan`
+If you want to deploy the contracts to the Kovan testnet, create a `.env` file in the same directory as the `truffle-config.js` with the following variables (complete them with your infura project ID and your mnemonic):
 
 ```
 KOVAN_INFURA_PROJECT_ID=
 KOVAN_MNEMONIC=
 ```
+
+and run in the terminal `truffle migrate --network kovan`
 
 ## Contact
 
