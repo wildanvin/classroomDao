@@ -8,7 +8,7 @@ function ClassroomList() {
   useEffect(() => {
     const fetchClassroom = async () => {
       let locally = 'http://localhost:5000/classrooms'
-      let vercelApi = 'https://api-fawn-delta.vercel.app/classrooms'
+      let vercelApi = 'https://api-fawn-delta.vercel.app/api/classrooms'
       let INPROD = true
 
       if (INPROD) {
