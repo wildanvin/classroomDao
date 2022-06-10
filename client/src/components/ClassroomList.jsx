@@ -29,8 +29,6 @@ function ClassroomList() {
     return <h2>No classrooms yet</h2>
   }
 
-  console.log(typeof classrooms, classrooms)
-
   return (
     <>
       <ul>

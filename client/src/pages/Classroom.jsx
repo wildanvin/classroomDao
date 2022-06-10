@@ -46,12 +46,12 @@ function Classroom(props) {
         const selectedClassroom = data.classrooms.filter((object) => {
           return object.id == params.address
         })
-        console.log(selectedClassroom[0])
+        //console.log(selectedClassroom[0])
         setClassroomData(selectedClassroom[0])
       } else {
         const response = await fetch(locally)
         const data = await response.json()
-        console.log(data)
+        //console.log(data)
         setClassroomData(data)
       }
     }

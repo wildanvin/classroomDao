@@ -121,8 +121,8 @@ function TransactionHandler(props) {
     return (
       <>
         <div>
-          No transactions have been submitted. Use the Submit button to create a
-          Transaction
+          No transactions have been submitted. If you are part of this class,
+          use the Submit button to create a Transaction
         </div>
         <br />
         <br />

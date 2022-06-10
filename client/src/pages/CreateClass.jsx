@@ -45,15 +45,31 @@ function CreateClass(props) {
     let idAddress = await createClassroomTx.events.ClassroomCreated.returnValues
       .classroomAddress
 
-    const response = await fetch('http://localhost:5000/classrooms', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ id: idAddress, formData }),
-    })
+    let locally = 'http://localhost:5000/classrooms'
+    let vercelApi = 'https://api-fawn-delta.vercel.app/api/classroom'
+    let INPROD = true
 
-    navigate(`/classroom/${idAddress}`)
+    if (INPROD) {
+      let response = await fetch(vercelApi, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: idAddress, formData }),
+      })
+
+      navigate(`/classroom/${idAddress}`)
+    } else {
+      let response = await fetch(locally, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: idAddress, formData }),
+      })
+
+      navigate(`/classroom/${idAddress}`)
+    }
   }
 
   const onMutate = (e) => {
