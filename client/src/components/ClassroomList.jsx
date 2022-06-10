@@ -14,7 +14,7 @@ function ClassroomList() {
       if (INPROD) {
         const response = await fetch(vercelApi)
         const data = await response.json()
-        setClassrooms(data)
+        setClassrooms(data.classrooms)
       } else {
         const response = await fetch(locally)
         const data = await response.json()
@@ -29,7 +29,7 @@ function ClassroomList() {
     return <h2>No classrooms yet</h2>
   }
 
-  //console.log(typeof classrooms)
+  console.log(typeof classrooms, classrooms)
 
   return (
     <>
