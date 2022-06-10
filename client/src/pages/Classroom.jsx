@@ -36,13 +36,24 @@ function Classroom(props) {
 
   useEffect(() => {
     const fetchClassroom = async () => {
-      const response = await fetch(
-        `http://localhost:5000/classrooms/${params.address}`
-      )
+      let locally = `http://localhost:5000/classrooms/${params.address}`
+      let vercelApi = 'https://api-fawn-delta.vercel.app/api/classrooms'
+      let INPROD = true
 
-      const data = await response.json()
-
-      setClassroomData(data)
+      if (INPROD) {
+        const response = await fetch(vercelApi)
+        const data = await response.json()
+        const selectedClassroom = data.classrooms.filter((object) => {
+          return object.id == params.address
+        })
+        console.log(selectedClassroom[0])
+        setClassroomData(selectedClassroom[0])
+      } else {
+        const response = await fetch(locally)
+        const data = await response.json()
+        console.log(data)
+        setClassroomData(data)
+      }
     }
     fetchClassroom()
 
