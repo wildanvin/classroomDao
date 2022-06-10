@@ -7,11 +7,20 @@ function ClassroomList() {
 
   useEffect(() => {
     const fetchClassroom = async () => {
-      const response = await fetch(`http://localhost:5000/classrooms/`)
+      let locally = 'http://localhost:5000/classrooms'
+      let vercelApi = 'https://api-fawn-delta.vercel.app/classrooms'
+      let INPROD = true
 
-      const data = await response.json()
+      if (INPROD) {
+        const response = await fetch(vercelApi)
+        const data = await response.json()
+        setClassrooms(data)
+      } else {
+        const response = await fetch(locally)
+        const data = await response.json()
 
-      setClassrooms(data)
+        setClassrooms(data)
+      }
     }
     fetchClassroom()
   }, [])
