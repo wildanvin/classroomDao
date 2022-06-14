@@ -45,9 +45,20 @@ You can find a demo video in [youtube](https://youtu.be/e3_iF1Tlbkg)
 2. Open a new terminal and run `ganache-cli` you can use the GUI version of ganache too. Make sure ganache is accessible on port 8545. It should say something like `Listening on 127.0.0.1:8545`
 3. Now, let's go back to the terminal where you cloned the project and run: `truffle migrate --network development`
 4. Notice that the FE code is in the `client` folder. So, open a new terminal and run `cd client`. Now that we are in the client folder run `npm install`.
-5. Now run `npm run dev` to spin up the react front end and the mock database.
-6. You now should be able to interact with the contracts through the front-end in your browser at localhost:3000
-7. Now that you are on the front end don't forget to change the network in Metamask to Localhost:8545 and add an account using the mock private keys that ganache provides.
+5. We need to change the value of the `INPROD` variable from `true` to `false` in the following files. Go to:
+
+   - `client/src/components/ClassroomList.jsx` line 12.
+   - `client/src/pages/Classroom.jsx` line 41.
+   - `client/src/pages/CreateClass.jsx` line 50.
+
+   Why do you need to do that to make it work locally?
+
+   - When the `INPROD` variable is set to `false` it uses the JSON-server package to create a mock API in the `db.json` file wich is perfect for testing locally.
+     If the `INPROD` variable is set to `true` it uses a serverless function in vercel that stores the data in a mongo database, wich is more suited for a production environment.
+
+6. Now run `npm run dev` to spin up the react front end and the mock database.
+7. You now should be able to interact with the contracts through the front-end in your browser at localhost:3000
+8. Now that you are on the front end don't forget to change the network in Metamask to Localhost:8545 and add an account using the mock private keys that ganache provides.
 
 ## Directory Structure
 
