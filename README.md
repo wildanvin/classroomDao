@@ -28,7 +28,7 @@ The `ClassroomFactory.sol` contract is deployed in the Kovan network at `0x9F99a
 
 ## Screencast Link
 
-I will upload a video demo soon
+You can find a demo video in [youtube](https://youtu.be/e3_iF1Tlbkg)
 
 ## How to run the project locally
 
