@@ -24,7 +24,7 @@ You can interact with de dApp in this [link](https://classroom-dao.vercel.app/).
 
 ## Deployed Address
 
-The `ClassroomFactory.sol` contract is deployed in the Kovan network at `0x9F99a1B4ae3484460b9a812B46A321d749DE59d8`.
+The `ClassroomFactory.sol` contract is deployed in the Goerli network at `0x27DD46923B826153f1D0fd54B99cFC8211Df6E02` & `Classroom.sol` at `0x1A39aDf0A0c615f114Ce35b6A7E8D1139Bd94853`
 
 ## Screencast Link
 
@@ -71,14 +71,14 @@ This project was bootstrapped with a react truffle box, so the project directory
 
 ## Environment variables (not needed for running project locally)
 
-If you want to deploy the contracts to the Kovan testnet, create a `.env` file in the same directory as the `truffle-config.js` with the following variables (complete them with your infura project ID and your mnemonic):
+If you want to deploy the contracts to the Goerli testnet, create a `.env` file in the same directory as the `truffle-config.js` with the following variables (complete them with your infura project ID and your mnemonic):
 
 ```
-GOERLI_INFURA_PROJECT_ID=
-GOERLI_MNEMONIC=
+INFURA_API_KEY=
+MNEMONIC=
 ```
 
-and run in the terminal `truffle migrate --network kovan`
+and run in the terminal `truffle migrate --network goerli`
 
 ## Contact
 
