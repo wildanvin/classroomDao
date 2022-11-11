@@ -74,8 +74,8 @@ This project was bootstrapped with a react truffle box, so the project directory
 If you want to deploy the contracts to the Kovan testnet, create a `.env` file in the same directory as the `truffle-config.js` with the following variables (complete them with your infura project ID and your mnemonic):
 
 ```
-KOVAN_INFURA_PROJECT_ID=
-KOVAN_MNEMONIC=
+GOERLI_INFURA_PROJECT_ID=
+GOERLI_MNEMONIC=
 ```
 
 and run in the terminal `truffle migrate --network kovan`
